@@ -1,5 +1,10 @@
 #include "server.h"
 
+static void liberar_elemento(char* value)
+{
+	free(value);
+}
+
 int main(void) {
 	logger = log_create("log.log", "Servidor", 1, LOG_LEVEL_DEBUG);
 
@@ -18,6 +23,7 @@ int main(void) {
 			lista = recibir_paquete(cliente_fd);
 			log_info(logger, "Me llegaron los siguientes valores:\n");
 			list_iterate(lista, (void*) iterator);
+			list_destroy_and_destroy_elements(lista, (void*) liberar_elemento);
 			break;
 		case -1:
 			log_error(logger, "el cliente se desconecto. Terminando servidor");

@@ -1,0 +1,27 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "run (client)",
+      "type": "cppdbg",
+      "request": "launch",
+      "program": "${workspaceFolder}/client/bin/client",
+      "args": [],
+      "cwd": "${workspaceFolder}/client",
+      "stopAtEntry": false,
+      "externalConsole": false,
+      "MIMode": "gdb"
+    },
+    {
+      "name": "run (server)",
+      "type": "cppdbg",
+      "request": "launch",
+      "program": "${workspaceFolder}/server/bin/server",
+      "args": [],
+      "cwd": "${workspaceFolder}/server",
+      "stopAtEntry": false,
+      "externalConsole": false,
+      "MIMode": "gdb"
+    }
+  ]
+}
